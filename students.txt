@@ -1,0 +1,4 @@
+Khalil 230033 90 85 75 89 83 84 85 87 73 Nobisco Bisco Tamale
+Farouq 230033 80 95 85 89 83 84 62 87 73 Tamale Bisco KNUST
+Maryam 230033 80 85 85 89 83 84 92 87 73 Bantama Nobisco Nobisco
+Newest 233332 80 85 85 89 83 84 82 87 93 Tamale Bantama Nobisco

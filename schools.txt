@@ -1,0 +1,4 @@
+Bantama General_Science General_Art Business Visual_Arts None None None
+Tamale General_Science General_Art Business Visual_Arts None None None
+Bisco General_Science General_Art Business Visual_Arts None None None
+Nobisco General_Science General_Art Business Visual_Arts None None None
