@@ -1,4 +1,4 @@
-Bantama General_Science General_Art Business Visual_Arts None None None
-Tamale General_Science General_Art Business Visual_Arts None None None
-Bisco General_Science General_Art Business Visual_Arts None None None
-Nobisco General_Science General_Art Business Visual_Arts None None None
+Bantama General_Science General_Art Business Visual_Arts Home_Economics Home_Economics Visual_Arts
+Tamale General_Science General_Art Business Visual_Arts Business Business Business
+Bisco General_Science General_Art Business Visual_Arts Visual_Arts General_Science General_Science
+Nobisco General_Science General_Art Business Visual_Arts Visual_Arts Technical_Science Home_Economics

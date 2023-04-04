@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1680557902 source:c:\users\farouq\onedrive\documents\codes\random code and notes\school placement app c\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

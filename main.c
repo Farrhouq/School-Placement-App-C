@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//#include <unistd.h>
+//#include <iostream>
 
 
 struct course {
@@ -271,8 +271,8 @@ int main()
 
                             if(c==6){
                                 strcpy(students[student].placement.school, school_found.name);
-                                students[student].placement.course = school_found.courses[c].name;
-                                printf("%s has been placed in %s for %s\n", students[student].name, school_found.name, school_found.courses[c].name);
+                                strcpy(students[student].placement.course, school_found.courses[c].name);
+                                //printf("%s has been placed in %s for %s\n", students[student].name, school_found.name, school_found.courses[c].name);
                                 placed = 1;
 //                                printf("Finally settled for : %s (%d) (c is %d)\n",
 //                                   current_settle_name,
@@ -280,11 +280,12 @@ int main()
                                 break;
                             }
                 }
-                    
+
                     strcpy(students[student].placement.school, school_found.name);
                     strcpy(students[student].placement.course, school_found.courses[c].name);
                     printf("%s has been placed in %s for %s\n", students[student].name, school_found.name, school_found.courses[c].name);
-                    //break;
+                    placed = 1;
+                    break;
                 }
 
             }
@@ -321,6 +322,7 @@ int main()
             strcpy(students[student].placement.course, how_close_course);
             placed = 1;
             printf("%s has been placed in %s for %s\n", students[student].name, last_choice.name, how_close_course);
+            break;
     }
 
 
@@ -353,49 +355,61 @@ int main()
     printf("========WELCOME TO SPA===========\n");
     printf("=================================\n");
 
-    auth:
-        printf("\nEnter your index number to login and check your placement: ");
-        int index_number;
-        scanf("%d", &index_number);
+    main:
+        auth:
+            printf("\nEnter your index number to login and check your placement: ");
+            int index_number;
+            scanf("%d", &index_number);
 
-        //Validate Index Number
-        //printf("These are the students in the system: \n");
-        int found = 0;
-        struct student student;
-        for(int i=0;i<5;i++){
-            //printf("%d\n", students[i].index_number);
-            if(students[i].index_number==index_number){
-                student = students[i];
-                found = 1;
-                break;
+            //Validate Index Number
+            //printf("These are the students in the system: \n");
+            int found = 0;
+            struct student student;
+            for(int i=0;i<5;i++){
+                //printf("%d\n", students[i].index_number);
+                if(students[i].index_number==index_number){
+                    student = students[i];
+                    found = 1;
+                    break;
+                }
             }
-        }
-            if(found==0){
-                printf("Invalid Index Number!\n");
-                goto auth;
+                if(found==0){
+                    printf("Invalid Index Number!\n");
+                    system("cls");
+                    goto auth;
+                }
+
+
+
+        printf("\n---Student Details--- \n");
+        printf("Name: %s\n", student.name);
+        printf("Index Number: %d\n", student.index_number);
+        printf("Aggregate: %d\n", student.grade);
+        printf("First Choice School: %s (course: %s)\n", student.school_choices[0].school_name, student.school_choices[0].course);
+        printf("Second Choice School: %s (course: %s)\n", student.school_choices[1].school_name, student.school_choices[1].course);
+        printf("Third Choice School: %s (course: %s)\n\n", student.school_choices[2].school_name, student.school_choices[2].course);
+
+        printf("---Placement Details--- \n");
+        printf("School Placed: %s\n", student.placement.school);
+        printf("Course: %s\n", student.placement.course);
+
+        end:
+            char response[1];
+            printf("\nLogin Again?[y/n] ");
+            scanf("%s", &response);
+//            printf("rftgj%d", strcmp(response, "n"));
+
+            if(strcmp(response, "y")==0){
+                sytem("cls");
+                goto main;
+            }
+            else if(strcmp(response, "n")==0)
+                return 0;
+            else{
+                goto end;
+                system("cls");
             }
 
 
-
-    printf("\n---Student Details--- \n");
-    printf("Name: %s\n", student.name);
-    printf("Index Number: %d\n", student.index_number);
-    printf("First Choice School: %s (course: %s)\n", student.school_choices[0].school_name, student.school_choices[0].course);
-    printf("Second Choice School: %s (course: %s)\n", student.school_choices[1].school_name, student.school_choices[1].course);
-    printf("Third Choice School: %s (course: %s)\n\n", student.school_choices[2].school_name, student.school_choices[2].course);
-
-    printf("---Placement Details--- \n");
-    printf("School Placed: %s\n", student.placement.school);
-    printf("Course: %s\n", student.placement.course);
-
-
-
-
-
-
-
-
-
-
-    return 0;
+return 0;
 }
