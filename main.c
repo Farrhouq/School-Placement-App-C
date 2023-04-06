@@ -69,7 +69,7 @@ int array_sum(int arr[], int size) {
 }
 
 int compare(const void *a, const void *b) {
-    return (*(int*)b - *(int*)a);
+    return (*(int*)a - *(int*)b);
 }
 
 int sum_largest_two(int arr[], int n) {
@@ -351,11 +351,11 @@ auth:
     printf("\tEnglish: %d\n", student.core_subjects[1]);
     printf("\tScience: %d\n", student.core_subjects[2]);
     printf("\tSocial Studies: %d\n", student.core_subjects[3]);
-    printf("\tBDT: %d\n", student.core_subjects[0]);
-    printf("\tRME: %d\n", student.core_subjects[1]);
-    printf("\tICT: %d\n", student.core_subjects[2]);
-    printf("\tFrench: %d\n", student.core_subjects[3]);
-    printf("\tGhanaian Language: %d\n\n", student.core_subjects[4]);
+    printf("\tBDT: %d\n", student.electives[0]);
+    printf("\tRME: %d\n", student.electives[1]);
+    printf("\tICT: %d\n", student.electives[2]);
+    printf("\tFrench: %d\n", student.electives[3]);
+    printf("\tGhanaian Language: %d\n\n", student.electives[4]);
 
     printf("Aggregate: %d\n", student.grade);
     printf("\nFirst Choice School: %s (course: %s)\n", student.school_choices[0].school_name, student.school_choices[0].course);
@@ -366,7 +366,7 @@ auth:
     printf("School Placed: %s\n", student.placement.school);
     printf("Course: %s\n", student.placement.course);
 
-end:
+end: ;
     char response[1];
     printf("\nLogin Again?[y/n] ");
     scanf("%s", &response);
